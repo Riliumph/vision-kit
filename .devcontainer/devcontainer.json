@@ -1,0 +1,63 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/python
+{
+	"name": "vision-kit",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"build": {
+		"dockerfile": "Dockerfile",
+	},
+	"containerEnv": {
+		"PYTHONPATH": "/home/vscode/.local/lib/python3.11/site-packages"
+	},
+	"runArgs": [
+		"--hostname",
+		"dev-container"
+	],
+	"mounts": [
+		"source=${localEnv:HOME}/.gitconfig,target=/home/vscode/.gitconfig,type=bind,consistency=cached"
+	],
+	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+	"workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/${localWorkspaceFolderBasename},type=bind",
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {
+	// },
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [],
+	// "onCreateCommand": "",
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "pip3 install --user -r requirements.txt",
+	"postStartCommand": "/usr/bin/supervisord",
+	// Configure tool-specific properties.
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"terminal.integrated.shell.linux": "/bin/bash",
+				"extensions.verifySignature": false
+			},
+			"extensions": [
+				"streetsidesoftware.code-spell-checker",
+				"ms-azuretools.vscode-docker",
+				"exiasr.hadolint",
+				"ionutvmi.path-autocomplete",
+				"shardulm94.trailing-spaces",
+				"DavidAnson.vscode-markdownlint",
+				"richie5um2.vscode-sort-json",
+				"eamodio.gitlens",
+				"mhutchie.git-graph",
+				"donjayamanne.githistory",
+				"ms-python.python",
+				"ms-python.black-formatter",
+				"ms-python.isort",
+				"ms-toolsai.jupyter",
+				"ms-toolsai.jupyter-keymap",
+				"ms-toolsai.jupyter-renderers",
+				"ms-toolsai.vscode-jupyter-cell-tags",
+				"ms-toolsai.vscode-jupyter-powertoys",
+				"njpwerner.autodocstring",
+				"inferrinizzard.prettier-sql-vscode",
+			]
+		}
+	},
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	"remoteUser": "vscode"
+}
