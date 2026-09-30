@@ -219,3 +219,7 @@ __marimo__/
 
 # devcontainer
 *-lock.json
+
+# media pipe pose
+*.task
+*.jpg

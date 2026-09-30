@@ -30,6 +30,11 @@ RUN DEBIAN_FRONTEND=noninteractive\
     vim\
     # for container
     supervisor\
+    # for vision
+    libegl1 \
+    libgles2 \
+    libgl1 \
+    libglib2.0-0 \
     && apt-get clean\
     && rm -rf /var/lib/apt/lists/*
 
