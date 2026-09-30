@@ -7,7 +7,9 @@ authors = [
     { name = "Riliumph", email = "riliumph@gmail.com" }
 ]
 requires-python = ">=3.14"
-dependencies = []
+dependencies = [
+    "opencv-python>=5.0.0.93",
+]
 
 [project.scripts]
 vision-kit = "vision_kit:main"
